@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verbomante — AR Demo</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body { background: #1B2A4A; overflow: hidden; }
+      #canvas-container { width: 100vw; height: 100vh; }
+
+      /* ── Cards HUD ── */
+      #cards-hud {
+        position: fixed;
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 14px;
+        z-index: 100;
+      }
+
+      .card {
+        width: 88px;
+        height: 118px;
+        background: rgba(27, 42, 74, 0.92);
+        border: 2px solid #4A9FD4;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 8px;
+        cursor: pointer;
+        transition: transform 0.15s ease, border-color 0.15s, box-shadow 0.15s;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+      }
+
+      .card.selected {
+        transform: translateY(-14px);
+        border-color: #2E7D5B;
+        box-shadow: 0 0 18px rgba(46, 125, 91, 0.55);
+      }
+
+      /* ícone de elemento */
+      .card-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .fire   { background: radial-gradient(circle, #FF7A3D, #C0392B); }
+      .water  { background: radial-gradient(circle, #5DADE2, #1A6FA8); }
+      .air    { background: radial-gradient(circle, #AED6F1, #7FB3D3); }
+      .nature { background: radial-gradient(circle, #58D68D, #2E7D5B); }
+
+      /* palavra em inglês */
+      .card-word {
+        color: #ffffff;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0.3px;
+        text-align: center;
+      }
+
+      /* tradução PT-BR — aparece ao revelar */
+      .card-pt {
+        color: #4A9FD4;
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 10px;
+        font-weight: 500;
+        text-align: center;
+        min-height: 14px;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .card.revealed .card-pt { opacity: 1; }
+
+      /* badge CEFR + dano */
+      .card-cefr {
+        color: rgba(74, 159, 212, 0.65);
+        font-family: system-ui, -apple-system, sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvas-container"></div>
+
+    <div id="cards-hud"></div>
+
+    <button id="conjure-btn" hidden style="position:fixed;bottom:12px;left:50%;transform:translateX(-50%);background:#1B2A4A;border:2px solid #1F6F78;color:#ffffff;font-size:18px;padding:10px 28px;border-radius:10px;cursor:pointer;z-index:110;">&#9889; Conjurar</button>
+
+    <script type="module" src="/src/ar-demo.js"></script>
+  </body>
+</html>
