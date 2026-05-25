@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pyromante",
+    "name": "Pyromante",
+    "tribe": "pyromante",
+    "element": "fire",
+    "maxEnergy": 100,
+    "mugicCounters": 3,
+    "modelPath": "models/pyromante.glb",
+    "deckIds": ["atk_001", "atk_005", "btg_001", "mgc_001", "loc_001"]
+  },
+  {
+    "id": "verdante",
+    "name": "Verdante",
+    "tribe": "verdante",
+    "element": "nature",
+    "maxEnergy": 120,
+    "mugicCounters": 2,
+    "modelPath": "models/verdante.glb",
+    "deckIds": ["atk_004", "atk_008", "btg_002", "mgc_002", "loc_002"]
+  },
+  {
+    "id": "aquariante",
+    "name": "Aquariante",
+    "tribe": "aquariante",
+    "element": "water",
+    "maxEnergy": 110,
+    "mugicCounters": 3,
+    "modelPath": "models/aquariante.glb",
+    "deckIds": ["atk_002", "atk_006", "btg_001", "mgc_002", "loc_003"]
+  },
+  {
+    "id": "aeromante",
+    "name": "Aeromante",
+    "tribe": "aeromante",
+    "element": "air",
+    "maxEnergy": 90,
+    "mugicCounters": 4,
+    "modelPath": "models/aeromante.glb",
+    "deckIds": ["atk_003", "atk_007", "btg_002", "mgc_001", "loc_003"]
+  }
+]

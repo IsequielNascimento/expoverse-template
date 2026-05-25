@@ -1,0 +1,15 @@
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  publicDir: 'public',
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        demo: 'ar-demo.html',
+      },
+    },
+  },
+})
